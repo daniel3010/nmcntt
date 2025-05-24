@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/nmcntt/static/css/main.bf2d74f3.css",
-    "main.js": "/nmcntt/static/js/main.1be382c8.js",
+    "main.css": "/nmcntt/static/css/main.d6124c74.css",
+    "main.js": "/nmcntt/static/js/main.0c44bd5d.js",
     "static/js/787.b4fef3a4.chunk.js": "/nmcntt/static/js/787.b4fef3a4.chunk.js",
     "static/media/GTWalsheimPro-Light.ttf": "/nmcntt/static/media/GTWalsheimPro-Light.0a89fe38505661051946.ttf",
     "static/media/GTWalsheimPro-Bold.ttf": "/nmcntt/static/media/GTWalsheimPro-Bold.2dbf49e9fcb548837711.ttf",
@@ -15,7 +15,6 @@
     "static/media/appstorebadge.svg": "/nmcntt/static/media/appstorebadge.8c4986ee4828b47d16f5cd694ef065f2.svg",
     "static/media/RPG.svg": "/nmcntt/static/media/RPG.dbbf0381b832f7e42d9a60be8c165ce9.svg",
     "static/media/racing.svg": "/nmcntt/static/media/racing.e5946f59711b1dfbb3e3b2d55f331dc7.svg",
-    "static/media/logo.svg": "/nmcntt/static/media/logo.a50f4b26a6965ab56ac04ca72ee379ce.svg",
     "static/media/puzzle.svg": "/nmcntt/static/media/puzzle.1ae26caf5f14eed3e6cc073f6c07de76.svg",
     "static/media/strategy.svg": "/nmcntt/static/media/strategy.f63572d851e101c4458a1a116ee0302a.svg",
     "static/media/shooter.svg": "/nmcntt/static/media/shooter.d8ee3b06ee3ec8afdd960b998ca90bfb.svg",
@@ -27,6 +26,7 @@
     "static/media/wishlist.svg": "/nmcntt/static/media/wishlist.67a2e156974a266e8bb78c79a981e6db.svg",
     "static/media/add.svg": "/nmcntt/static/media/add.e49fa055b12438e9666e6e6d9de011b4.svg",
     "static/media/like.svg": "/nmcntt/static/media/like.130eba948160be4374936aa9be2ddcff.svg",
+    "static/media/logo.svg": "/nmcntt/static/media/logo.a50f4b26a6965ab56ac04ca72ee379ce.svg",
     "static/media/added.svg": "/nmcntt/static/media/added.a47ea15f8de594a3ee8bb335459fa179.svg",
     "static/media/cart.svg": "/nmcntt/static/media/cart.f0345fa403f76e42890b476f1397f164.svg",
     "static/media/action.svg": "/nmcntt/static/media/action.bbc2783dcf622fb98440f6dde6529cca.svg",
@@ -40,12 +40,12 @@
     "static/media/arrowRight.svg": "/nmcntt/static/media/arrowRight.8da49ba76e3407ec9e8ab3a4ed2dc3ce.svg",
     "static/media/right.svg": "/nmcntt/static/media/right.7b13c9ac5e7c53fc2f3af0ae9afcc4d1.svg",
     "static/media/left.svg": "/nmcntt/static/media/left.bc24e9e3061ccb03a6e13a55760da701.svg",
-    "main.bf2d74f3.css.map": "/nmcntt/static/css/main.bf2d74f3.css.map",
-    "main.1be382c8.js.map": "/nmcntt/static/js/main.1be382c8.js.map",
+    "main.d6124c74.css.map": "/nmcntt/static/css/main.d6124c74.css.map",
+    "main.0c44bd5d.js.map": "/nmcntt/static/js/main.0c44bd5d.js.map",
     "787.b4fef3a4.chunk.js.map": "/nmcntt/static/js/787.b4fef3a4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bf2d74f3.css",
-    "static/js/main.1be382c8.js"
+    "static/css/main.d6124c74.css",
+    "static/js/main.0c44bd5d.js"
   ]
 }
