@@ -133,7 +133,7 @@ function App() {
     //   console.log(location.pathname)
     // }, [])
 
-    if (location.pathname != "/nmcntt/browse" && selectedGame === false) {
+    if (location.pathname != "/nmcntt" && selectedGame === false) {
         let surname = location.pathname.substring(29);
         console.log("test");
         let currentGame = games.find(game => game.surname === surname);
@@ -149,7 +149,7 @@ function App() {
         setTextExtended(false);
         setCartDisplayed(false);
         setHoverState([...hoverState, hoverState[21].hovered = false]);
-        navigate('/nmcntt/browse');
+        navigate('/nmcntt');
     }
 
     const handleHome = () => {
@@ -157,7 +157,7 @@ function App() {
         setTextExtended(false);
         setCartDisplayed(false);
         setHoverState([...hoverState, hoverState[21].hovered = false]);
-        navigate('/nmcntt/browse');
+        navigate('/nmcntt');
     }
 
     const handleSearch = (e) => {
@@ -170,8 +170,8 @@ function App() {
         e.preventDefault();
         setSearching(true);
 
-        if (location.pathname != "/nmcntt/browse") {
-            navigate('/nmcntt/browse');
+        if (location.pathname != "/nmcntt") {
+            navigate('/nmcntt');
         }
     }
 
@@ -245,7 +245,7 @@ function App() {
 
     const handleAddToCart = (e) => {
         let handledAddedGame = allGames.map((game, i) => {
-            if (location.pathname === "/nmcntt/browse") {
+            if (location.pathname === "/nmcntt") {
                 if (e.target.id == i) {
                     game.inCart = true
                     let newCart = cart;
@@ -318,10 +318,10 @@ function App() {
             setBrowsing(true);
         }
 
-        if (location.pathname != "/nmcntt/browse") {
+        if (location.pathname != "/nmcntt") {
             document.body.style.overflow = "hidden";
 
-        } else if (location.pathname === "/nmcntt/browse") {
+        } else if (location.pathname === "/nmcntt") {
             document.body.style.overflow = "scroll";
         }
     }, [location.pathname])
@@ -348,8 +348,8 @@ function App() {
 
     return (
         <AnimatePresence exitBeforeEnter>
-            <Routes key="/nmcntt/browse" location={location}>
-                <Route path="/nmcntt/browse" element={<Browse
+            <Routes key="/nmcntt" location={location}>
+                <Route path="/nmcntt" element={<Browse
                     cart={cart}
                     cartAmount={cartAmount}
                     handleHover={handleHover}

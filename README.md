@@ -10,7 +10,7 @@ filters, favorites, and a shopping cart, all designed with responsive layouts fo
 
 ## Demo
 
-🖥 [Live Demo](https://game-store-e-commerce.netlify.app/browse)
+🖥 [Live Demo](https://daniel3010.github.io/nmcntt)
 
 ## Features ✨
 

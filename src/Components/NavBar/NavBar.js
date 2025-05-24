@@ -64,7 +64,7 @@ const NavBar = props => {
                             <>
                                 <motion.div
                                     animate="visible"
-                                    initial={location.pathname === "/nmcntt/browse" ? "hidden" : "visible"}
+                                    initial={location.pathname === "/nmcntt" ? "hidden" : "visible"}
                                     variants={searchVariants}
                                     transition={{opacity: {type: "spring"}, duration: 0.01, delay: 0.25}}
                                     className={styles.searchdiv}
