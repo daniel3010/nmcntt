@@ -36,8 +36,8 @@ const Grid = props => {
     return (
     <>
           <div className={styles.reviews} style={{ display: reviewDisplay ? "flex" : "none" }}>
-              <h2>There are no reviews yet!</h2>
-              <h3>You can add some, soon.</h3>
+              <h2>Chưa có đánh giá nào!</h2>
+              <h3>Bạn có thể thêm một số đánh giá, sớm thôi.</h3>
           </div>
           <div className={styles.gridContainer} style={{ display: reviewDisplay ? "none" : "grid" }} id="gridContainer">
             {searching === false ? cartDisplayed ? shownGames.map((game, i) => {

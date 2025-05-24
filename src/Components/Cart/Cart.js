@@ -49,8 +49,8 @@ const Cart = props => {
                     >
                         <div className={styles.top}>
                             <div className={styles.topHeader}>
-                                <h2>{cartAmount >= 1 ? cartAmount > 1 ? `${cartAmount} games` : "1 game" : "No games added"}</h2>
-                                <h3 onClick={clearCart}>{cartAmount >= 1 ? "Clear" : ""}</h3>
+                                <h2>{cartAmount >= 1 ? cartAmount > 1 ? `${cartAmount} games` : "1 game" : "Chưa có game nào"}</h2>
+                                <h3 onClick={clearCart}>{cartAmount >= 1 ? "Xóa" : ""}</h3>
                             </div>
             
                             <div className={styles.topGames}>

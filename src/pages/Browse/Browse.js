@@ -1,14 +1,14 @@
 import styles from './Browse.module.css';
 import React, { useEffect, useState } from 'react';
-import NavBar from '../../components/NavBar/NavBar';
+import NavBar from '../../Components/NavBar/NavBar';
 import { useNavigate } from 'react-router-dom';
 import AnimatedPage from '../AnimatedPage/AnimatedPage';
 import { ReactComponent as Grids } from "../../assets/image/grid.svg";
 import { ReactComponent as Columns } from "../../assets/image/columns.svg";
-import Filters from '../../components/Filters/Filters';
-import Grid from '../../components/Grid/Grid';
-import Cart from '../../components/Cart/Cart';
-import Footer from '../../components/Footer/Footer';
+import Filters from '../../Components/Filters/Filters';
+import Grid from '../../Components/Grid/Grid';
+import Cart from '../../Components/Cart/Cart';
+import Footer from '../../Components/Footer/Footer';
 
 const Browse = props => {
   const { 
@@ -146,8 +146,8 @@ const Browse = props => {
               />
 
               <div className={styles.list}>
-                <h1>Trending and interesting</h1>
-                <p>Based on player counts and ratings</p>
+                <h1>Xu hướng và thú vị</h1>
+                <p>Dựa trên số lượng người chơi và đánh giá</p>
 
                 <div className={styles.applied}>
                   <div className={styles.filterList}>
@@ -155,7 +155,7 @@ const Browse = props => {
                       className={styles.filterButton} 
                       aria-label="Current Filter"
                     >
-                      Filter by:
+                      Lọc theo:
                       <span> {currentFilter}</span>
                     </button>
                     <button 
@@ -163,7 +163,7 @@ const Browse = props => {
                       onClick={clearFilter} 
                       aria-label="Clear Filters"
                     >
-                      Clear Filter
+                      Xóa bộ lọc
                     </button>
                   </div>
                   

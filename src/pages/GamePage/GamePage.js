@@ -2,15 +2,15 @@ import styles from './GamePage.module.css';
 import React, { useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import AnimatedGamePage from '../AnimatedPage/AnimatedGamePage';
-import NavBar from '../../components/NavBar/NavBar';
+import NavBar from '../../Components/NavBar/NavBar';
 import { ReactComponent as Arrow } from "../../assets/image/arrow.svg";
 import { ReactComponent as Up } from "../../assets/image/up.svg";
 import { ReactComponent as Like } from "../../assets/image/like.svg";
-import Slider from '../../components/Slider/Slider';
+import Slider from '../../Components/Slider/Slider';
 import AnimatedText from '../AnimatedPage/AnimatedText';
 import { ReactComponent as Add } from "../../assets/image/add.svg";
-import AddedToCartBig from '../../components/AddedToCart/AddedToCartBig';
-import Cart from '../../components/Cart/Cart';
+import AddedToCartBig from '../../Components/AddedToCart/AddedToCartBig';
+import Cart from '../../Components/Cart/Cart';
 import templateGame from '../../utils/templateGame';
 
 const GamePage = props => {
@@ -147,21 +147,18 @@ const GamePage = props => {
                   <div className={styles.gameInfo}>
                     <div className={styles.about}>
                       <div className={styles.aboutTop}>
-                        <h2>About</h2>
+                        <h2>Giới thiệu</h2>
                         <p>{selectedGame ? selectedGame.desc : templateGame.desc}</p>
                       </div>
-                      <div 
-                        className={extended ? `${styles.conditionalOpen} ${styles.aboutBottom}` : `${styles.conditionalClose} ${styles.aboutBottomClosed}`} 
-                        id="about"
-                      >
+                      <div className={extended ? `${styles.conditionalOpen} ${styles.aboutBottom}` : `${styles.conditionalClose} ${styles.aboutBottomClosed}`} id="about">
                         <AnimatedText>
                              <div className={textExtended ? styles.open : styles.closed}>
-                                 <a href={selectedGame ? selectedGame.link : templateGame.link} target="_blank">{selectedGame ? selectedGame.name : "No"} Website</a>
-                                 <h4>Released: {selectedGame ? selectedGame.release : templateGame.release}</h4>
-                                 <h4>Platforms: {selectedGame ? selectedGame.platforms : templateGame.platforms}</h4>
-                                 <h4>Main Genre: {selectedGame ? selectedGame.genre : templateGame.genre}</h4>
-                                 <h4>Developers: {selectedGame ? selectedGame.developers : templateGame.developers}</h4>
-                                 <h4 className={styles.lastChild}>Publishers: {selectedGame ? selectedGame.publishers : templateGame.publishers}</h4>
+                                 <a href={selectedGame ? selectedGame.link : templateGame.link} target="_blank">{selectedGame ? selectedGame.name : "Không"} Website</a>
+                                 <h4>Phát hành: {selectedGame ? selectedGame.release : templateGame.release}</h4>
+                                 <h4>Nền tảng: {selectedGame ? selectedGame.platforms : templateGame.platforms}</h4>
+                                 <h4>Thể loại chính: {selectedGame ? selectedGame.genre : templateGame.genre}</h4>
+                                 <h4>Nhà phát triển: {selectedGame ? selectedGame.developers : templateGame.developers}</h4>
+                                 <h4 className={styles.lastChild}>Nhà xuất bản: {selectedGame ? selectedGame.publishers : templateGame.publishers}</h4>
                              </div>
                         </AnimatedText>
 

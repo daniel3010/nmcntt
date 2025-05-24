@@ -22,7 +22,7 @@ const Filters = props => {
 
     return (
         <div className={styles.filters}>
-          <h2>Filters</h2>
+          <h2>Bộ lọc</h2>
 
           <div className={styles.globalFilters}>
                <div 
@@ -35,14 +35,14 @@ const Filters = props => {
                  <button 
                    className={styles.filterBtn} 
                    style={{ backgroundColor: (hoverState[8].hovered || currentFilter == "Wishlist") ? "#fff" : "#2d2d2d" }}
-                   aria-label="Open wishlist"
+                   aria-label="Mở danh sách yêu thích"
                  >
                      <Wishlist 
                         style={{ fill: (hoverState[8].hovered || currentFilter == "Wishlist") ? "#000000" : "#fff" }} 
                         className={styles.Wishlist}
                      />
                  </button>
-                 Wishlist
+                 Danh sách yêu thích
                </div>
      
                <div 
@@ -55,14 +55,14 @@ const Filters = props => {
                  <button 
                    className={`${styles.filterBtn2} ${styles.Ratings}`} 
                    style={{ backgroundColor: (hoverState[9].hovered || currentFilter == "Ratings") ? "#fff" : "#2d2d2d" }}
-                   aria-label="Sort after ratings"
+                   aria-label="Sắp xếp theo đánh giá"
                  >
                      <Ratings
                        className={`${styles.filterSVG2} ${styles.Ratings}`} 
                        style={{ fill: (hoverState[9].hovered || currentFilter == "Ratings") ? "#000000" : "#fff" }} 
                      />
                  </button>
-                 Ratings
+                 Đánh giá
                </div>
      
                <div 
@@ -75,7 +75,7 @@ const Filters = props => {
                  <button 
                    className={`${styles.filterBtn3} ${styles.Reviews}`} 
                    style={{ backgroundColor: (hoverState[10].hovered || currentFilter == "Reviews") ? "#fff" : "#2d2d2d" }}
-                   aria-label="Sort after reviews"
+                   aria-label="Sắp xếp theo nhận xét"
                  >
                      <Reviews
                        className={`${styles.filterSVG3} ${styles.Reviews}`} 
@@ -83,12 +83,12 @@ const Filters = props => {
                        style={{ fill: (hoverState[10].hovered || currentFilter == "Reviews") ? "#000000" : "#fff" }} 
                      />
                  </button>
-                 Reviews
+                 Nhận xét
                </div>
           </div>
 
           <div className={styles.genreFilters}>
-            <h2>Genres</h2>
+            <h2>Thể loại</h2>
 
             <div 
               className={styles.filterDiv} 
@@ -100,14 +100,14 @@ const Filters = props => {
                  <button 
                    className={styles.filterBtn3} 
                    style={{ backgroundColor: (hoverState[11].hovered || currentFilter == "Action") ? "#fff" : "#2d2d2d" }}
-                   aria-label="Show action genre"
+                   aria-label="Hiển thị thể loại Hành động"
                  >
                     <Action 
                       className={styles.filterSVG3}
                       style={{ fill: (hoverState[11].hovered || currentFilter == "Action") ? "#000000" : "#fff" }} 
                     />
                  </button>
-                 Action
+                 Hành động
             </div>
 
             <div 
@@ -120,14 +120,14 @@ const Filters = props => {
                  <button 
                    className={styles.filterBtn2} 
                    style={{ backgroundColor: (hoverState[12].hovered || currentFilter == "Strategy") ? "#fff" : "#2d2d2d" }}
-                   aria-label="Show Strategy genre"
+                   aria-label="Hiển thị thể loại Chiến lược"
                  >
                      <Strategy 
                        className={styles.filterSVG2} 
                        style={{ fill: (hoverState[12].hovered || currentFilter == "Strategy") ? "#000000" : "#fff" }} 
                      />
                  </button>
-                 Strategy
+                 Chiến lược
             </div>
 
             <div 
@@ -140,14 +140,14 @@ const Filters = props => {
                  <button 
                    className={styles.filterBtn3} 
                    style={{ backgroundColor: (hoverState[13].hovered || currentFilter == "RPG") ? "#fff" : "#2d2d2d" }}
-                   aria-label="Show RPG genre"
+                   aria-label="Hiển thị thể loại Nhập vai"
                  >
                      <RPG 
                        className={styles.filterSVG3} 
                        style={{ fill: (hoverState[13].hovered || currentFilter == "RPG") ? "#000000" : "#fff" }} 
                       />
                  </button>
-                 RPG
+                 Nhập vai
             </div>
 
             <div 
@@ -160,14 +160,14 @@ const Filters = props => {
                  <button 
                    className={styles.filterBtn2} 
                    style={{ backgroundColor: (hoverState[14].hovered || currentFilter == "Shooter") ? "#fff" : "#2d2d2d" }}
-                   aria-label="Show Shooter genre"
+                   aria-label="Hiển thị thể loại Bắn súng"
                  >
                      <Shooter 
                        className={styles.filterSVG2} 
                        style={{ fill: (hoverState[14].hovered || currentFilter == "Shooter") ? "#000000" : "#fff" }} 
                       />
                  </button>
-                 Shooter
+                 Bắn súng
             </div>
 
             <div 
@@ -180,14 +180,14 @@ const Filters = props => {
                  <button 
                    className={styles.filterBtn2} 
                    style={{ backgroundColor: (hoverState[15].hovered || currentFilter == "Adventure") ? "#fff" : "#2d2d2d" }}
-                   aria-label="Show Adventure genre"
+                   aria-label="Hiển thị thể loại Phiêu lưu"
                  >
                      <Adventure 
                        className={styles.filterSVG2} 
                        style={{ fill: (hoverState[15].hovered || currentFilter == "Adventure") ? "#000000" : "#fff" }} 
                       />
                  </button>
-                 Adventure
+                 Phiêu lưu
             </div>
 
             <div 
@@ -200,14 +200,14 @@ const Filters = props => {
                  <button 
                    className={styles.filterBtn4} 
                    style={{ backgroundColor: (hoverState[16].hovered || currentFilter == "Puzzle") ? "#fff" : "#2d2d2d" }}
-                   aria-label="Show Puzzle genre"
+                   aria-label="Hiển thị thể loại Giải đố"
                   >
                      <Puzzle 
                        className={styles.filterSVG2} 
                        style={{ fill: (hoverState[16].hovered || currentFilter == "Puzzle") ? "#000000" : "#fff" }} 
                       />
                  </button>
-                 Puzzle
+                 Giải đố
             </div>
 
             <div 
@@ -220,14 +220,14 @@ const Filters = props => {
                  <button 
                    className={styles.filterBtn3} 
                    style={{ backgroundColor: (hoverState[17].hovered || currentFilter == "Racing") ? "#fff" : "#2d2d2d" }}
-                   aria-label="Show Racing genre"
+                   aria-label="Hiển thị thể loại Đua xe"
                  >
                      <Racing 
                        className={styles.filterSVG3} 
                        style={{ fill: (hoverState[17].hovered || currentFilter == "Racing") ? "#000000" : "#fff" }} 
                       />
                  </button>
-                 Racing
+                 Đua xe
             </div>
 
             <div 
@@ -240,14 +240,14 @@ const Filters = props => {
                  <button 
                    className={styles.filterBtn4} 
                    style={{ backgroundColor: (hoverState[18].hovered || currentFilter == "Sports") ? "#fff" : "#2d2d2d" }}
-                   aria-label="Show Sports genre"
+                   aria-label="Hiển thị thể loại Thể thao"
                  >
                      <Sports 
                        className={styles.filterSVG3} 
                        style={{ fill: (hoverState[18].hovered || currentFilter == "Sports") ? "#000000" : "#fff" }} 
                       />
                  </button>
-                 Sports
+                 Thể thao
             </div>
           </div>
         </div>

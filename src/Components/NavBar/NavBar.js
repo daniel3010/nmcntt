@@ -53,7 +53,7 @@ const NavBar = props => {
                          onClick={handleHome}
                     >
                         <Logo className={styles.svg} style={{fill: "#fff"}}/>
-                        <h3>Game Store</h3>
+                        <h3>Cửa Hàng Game</h3>
                     </div>
 
                     <div className={styles.pathdiv} id="1"
@@ -125,7 +125,7 @@ const NavBar = props => {
                                 strokeWidth: "34px"
                             }}
                         />
-                        <h3 onClick={handleOpenCart}>Cart: {cartAmount}</h3>
+                        <h3 onClick={handleOpenCart}>Giỏ hàng: {cartAmount}</h3>
                     </div>
                 </div>
             </motion.div>
