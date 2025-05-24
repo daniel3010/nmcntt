@@ -133,7 +133,7 @@ function App() {
     //   console.log(location.pathname)
     // }, [])
 
-    if (location.pathname != "/browse" && selectedGame === false) {
+    if (location.pathname != "/nmcntt/browse" && selectedGame === false) {
         let surname = location.pathname.substring(29);
         console.log("test");
         let currentGame = games.find(game => game.surname === surname);
@@ -149,7 +149,7 @@ function App() {
         setTextExtended(false);
         setCartDisplayed(false);
         setHoverState([...hoverState, hoverState[21].hovered = false]);
-        navigate('/browse');
+        navigate('/nmcntt/browse');
     }
 
     const handleHome = () => {
@@ -157,7 +157,7 @@ function App() {
         setTextExtended(false);
         setCartDisplayed(false);
         setHoverState([...hoverState, hoverState[21].hovered = false]);
-        navigate('/browse');
+        navigate('/nmcntt/browse');
     }
 
     const handleSearch = (e) => {
@@ -170,8 +170,8 @@ function App() {
         e.preventDefault();
         setSearching(true);
 
-        if (location.pathname != "/browse") {
-            navigate('/browse');
+        if (location.pathname != "/nmcntt/browse") {
+            navigate('/nmcntt/browse');
         }
     }
 
@@ -184,7 +184,7 @@ function App() {
 
         } else if (e.target.classList[0] != "AddToCart_addToCart__zbJPe") {
             setSelectedGame(games[e.target.parentNode.id]);
-            navigate(`/games/${games[e.target.parentNode.id].surname}`);
+            navigate(`/nmcntt/games/${games[e.target.parentNode.id].surname}`);
         }
     }
 
@@ -210,7 +210,7 @@ function App() {
     const openGamePage = (e) => {
         setCartDisplayed(false);
         let selectedGameSurname = e.target.id;
-        navigate(`/games/${selectedGameSurname}`);
+        navigate(`/nmcntt/games/${selectedGameSurname}`);
     }
 
     const handleHover = (e) => {
@@ -245,7 +245,7 @@ function App() {
 
     const handleAddToCart = (e) => {
         let handledAddedGame = allGames.map((game, i) => {
-            if (location.pathname === "/browse") {
+            if (location.pathname === "/nmcntt/browse") {
                 if (e.target.id == i) {
                     game.inCart = true
                     let newCart = cart;
@@ -312,16 +312,16 @@ function App() {
     useEffect(() => {
         setOverlap(false);
 
-        if (location.pathname === "/") {
+        if (location.pathname === "/nmcntt/") {
             setBrowsing(false);
         } else {
             setBrowsing(true);
         }
 
-        if (location.pathname != "/browse") {
+        if (location.pathname != "/nmcntt/browse") {
             document.body.style.overflow = "hidden";
 
-        } else if (location.pathname === "/browse") {
+        } else if (location.pathname === "/nmcntt/browse") {
             document.body.style.overflow = "scroll";
         }
     }, [location.pathname])
@@ -348,8 +348,8 @@ function App() {
 
     return (
         <AnimatePresence exitBeforeEnter>
-            <Routes key="/browse" location={location}>
-                <Route path="/browse" element={<Browse
+            <Routes key="/nmcntt/browse" location={location}>
+                <Route path="/nmcntt/browse" element={<Browse
                     cart={cart}
                     cartAmount={cartAmount}
                     handleHover={handleHover}
@@ -382,7 +382,7 @@ function App() {
                     setHoverState={setHoverState}
                     openGamePage={openGamePage}
                 />}/>
-                <Route path="/games/:gameId" element={<GamePage
+                <Route path="/nmcntt/games/:gameId" element={<GamePage
                     cart={cart}
                     cartAmount={cartAmount}
                     handleHover={handleHover}
