@@ -71,7 +71,7 @@ const NavBar = props => {
                                 >
                                     <form onSubmit={handleSearchSubmit}>
                                         <input
-                                            placeholder="Search games..."
+                                            placeholder="Tìm games..."
                                             value={search}
                                             onChange={handleSearch}
                                         >
@@ -102,7 +102,7 @@ const NavBar = props => {
                                 <Browse
                                     className={styles.svg}
                                     style={{fill: "#fff"}}/>
-                                <h3 onClick={handleBrowse}>Browse Store</h3>
+                                <h3 onClick={handleBrowse}>Duyệt cửa hàng</h3>
                             </div>
                         }
                     </div>
