@@ -1,8 +1,8 @@
 import styles from './NotFound.module.css';
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import NavBar from '../../components/NavBar/NavBar';
-import Cart from '../../components/Cart/Cart';
+import NavBar from '../../Components/NavBar/NavBar';
+import Cart from '../../Components/Cart/Cart';
 import { motion } from "framer-motion";
 
 const NotFound = props => {
@@ -77,8 +77,8 @@ useEffect(() => {
                 <div className={styles.notFoundContent}>
                     <img className={styles.notFoundImg} src={require("../../assets/image/404.png")} alt="Not Found Warning" />
                     <div className={styles.notFoundText}>
-                        <h2><span>{location.pathname.substring(22)}</span> is not available!</h2>
-                        <p>The page you tried to access is not available. You will be redirected to our browse section shortly. If you think this is an error, <span className={styles.contact}>contact us!</span></p>
+                        <h2><span>{location.pathname.substring(22)}</span> không khả dụng!</h2>
+                        <p>Trang bạn cố gắng truy cập không khả dụng. Bạn sẽ được chuyển hướng đến phần duyệt của chúng tôi trong giây lát. Nếu bạn nghĩ đây là lỗi, <span className={styles.contact}>liên hệ với chúng tôi!</span></p>
                     </div>
                 </div>
                 <motion.div className={styles.progressBar} variants={progress} initial="initial" animate="animate"></motion.div>
