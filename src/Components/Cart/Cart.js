@@ -4,6 +4,7 @@ import { ReactComponent as Right } from "../../assets/image/arrowRight.svg";
 import { ReactComponent as Cross } from "../../assets/image/cross.svg";
 import { motion } from "framer-motion";
 import AnimatedCart from '../../pages/AnimatedPage/AnimatedCart';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = props => {
     const {
@@ -21,6 +22,8 @@ const Cart = props => {
 
     const [total, setTotal] = useState(0);
     let newTotal = 0;
+    const navigate = useNavigate();
+
     cart.forEach((item, i) => {
         let priceAsNumber = parseFloat(item.price);
         let currentTotal = parseFloat(newTotal);
@@ -36,6 +39,10 @@ const Cart = props => {
         animate: { x: 0, transition: {  x: { type: "spring", duration: 1.2, bounce: 0.4 }} },
         exit: { x: 100, transition: {  x: { type: "spring", duration: 1.2, bounce: 0.575 }} },
     }
+
+    const handleCheckout = () => {
+        navigate('/checkout');
+    };
 
     return (
         <div className={styles.cartWindow}>
@@ -84,6 +91,7 @@ const Cart = props => {
                                   id="24" 
                                   onMouseEnter={handleHover} 
                                   onMouseLeave={handleHover} 
+                                  onClick={handleCheckout}
                                   style={{ color: hoverState[24].hovered ? "#92f" : "#fff" }} 
                                   aria-label="Checkout"
                                 >

@@ -10,7 +10,7 @@ const AddToCart = props => {
     } = props;
 
     return (
-          <div className={styles.addToCart} onMouseEnter={handleHoverGame} onMouseLeave={handleHoverGame} id={game.id} onClick={handleAddToCart}>
+          <div className={styles.addToCart} onMouseEnter={handleHoverGame} onMouseLeave={handleHoverGame} id={game.id} onClick={handleAddToCart} >
             <h4 style={{ color: game.isHovered ? "#92f" : "#999" }}>Thêm vào giỏ hàng</h4>
             <Add className={styles.add} style={{ fill: game.isHovered ? "#92f" : "#999" }} />
           </div>

@@ -1,12 +1,16 @@
-import {Route, Routes, useLocation, useNavigate} from "react-router-dom";
-import React, {useEffect, useState} from 'react';
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
 import Browse from './pages/Browse/Browse';
 import GamePage from './pages/GamePage/GamePage';
 import NotFound from './pages/NotFound/NotFound';
-import {AnimatePresence} from "framer-motion";
+import About from './pages/About/About';
+import Guide from './pages/Guide/Guide';
+import { AnimatePresence } from "framer-motion";
 import filterNames from './utils/filterNames';
 import games from './utils/games';
 import templateGame from './utils/templateGame';
+import Footer from './Components/Footer/Footer';
+import Checkout from './Components/Checkout/Checkout';
 
 function App() {
     const [currentFilter, setCurrentFilter] = useState("none");
@@ -24,6 +28,26 @@ function App() {
     const [extended, setExtended] = useState(false);
     const [textExtended, setTextExtended] = useState(false);
     const [hoverState, setHoverState] = useState([
+        {
+            hovered: false,
+            selected: false
+        },
+        {
+            hovered: false,
+            selected: false
+        },
+        {
+            hovered: false,
+            selected: false
+        },
+        {
+            hovered: false,
+            selected: false
+        },
+        {
+            hovered: false,
+            selected: false
+        },
         {
             hovered: false,
             selected: false
@@ -181,10 +205,17 @@ function App() {
 
     const handleSelectGame = (e) => {
         if (e.target.tagName === "BUTTON") {
+            return;
+        } else {
+            const gameId = Number(e.currentTarget.id);
+            const selectedGame = allGames.find(game => game.id === gameId);
 
-        } else if (e.target.classList[0] != "AddToCart_addToCart__zbJPe") {
-            setSelectedGame(games[e.target.parentNode.id]);
-            navigate(`/nmcntt/games/${games[e.target.parentNode.id].surname}`);
+            if (selectedGame) {
+                setSelectedGame(selectedGame);
+                navigate(`/nmcntt/games/${selectedGame.surname}`);
+            } else {
+                console.error("Game with ID not found:", gameId);
+            }
         }
     }
 
@@ -244,6 +275,7 @@ function App() {
     }
 
     const handleAddToCart = (e) => {
+        e.stopPropagation();
         let handledAddedGame = allGames.map((game, i) => {
             if (location.pathname === "/nmcntt") {
                 if (e.target.id == i) {
@@ -346,94 +378,128 @@ function App() {
         }
     }, [cartDisplayed])
 
-    return (
-        <AnimatePresence exitBeforeEnter>
-            <Routes key="/nmcntt" location={location}>
-                <Route path="/nmcntt" element={<Browse
-                    cart={cart}
-                    cartAmount={cartAmount}
-                    handleHover={handleHover}
-                    handleSelect={handleSelect}
-                    hoverState={hoverState}
-                    currentFilter={currentFilter}
-                    shownGames={shownGames}
-                    setShownGames={setShownGames}
-                    clearFilter={clearFilter}
-                    reviewDisplay={reviewDisplay}
-                    setReviewDisplay={setReviewDisplay}
-                    allGames={allGames}
-                    setAllGames={setAllGames}
-                    handleLike={handleLike}
-                    handleHoverGame={handleHoverGame}
-                    handleAddToCart={handleAddToCart}
-                    handleSelectGame={handleSelectGame}
-                    handleSearch={handleSearch}
-                    handleSearchSubmit={handleSearchSubmit}
-                    search={search}
-                    searching={searching}
-                    browsing={browsing}
-                    handleBrowse={handleBrowse}
-                    handleHome={handleHome}
-                    cartDisplayed={cartDisplayed}
-                    handleOpenCart={handleOpenCart}
-                    handleCloseCart={handleCloseCart}
-                    clearCart={clearCart}
-                    handleRemoveFromCart={handleRemoveFromCart}
-                    setHoverState={setHoverState}
-                    openGamePage={openGamePage}
-                />}/>
-                <Route path="/nmcntt/games/:gameId" element={<GamePage
-                    cart={cart}
-                    cartAmount={cartAmount}
-                    handleHover={handleHover}
-                    hoverState={hoverState}
-                    handleLike={handleLike}
-                    handleAddToCart={handleAddToCart}
-                    handleSelectGame={handleSelectGame}
-                    selectedGame={selectedGame}
-                    setSelectedGame={setSelectedGame}
-                    handleSearch={handleSearch}
-                    handleSearchSubmit={handleSearchSubmit}
-                    search={search}
-                    searching={searching}
-                    browsing={browsing}
-                    handleBrowse={handleBrowse}
-                    handleHome={handleHome}
-                    setHoverState={setHoverState}
-                    allGames={allGames}
-                    extended={extended}
-                    setExtended={setExtended}
-                    textExtended={textExtended}
-                    setTextExtended={setTextExtended}
-                    cartDisplayed={cartDisplayed}
-                    handleOpenCart={handleOpenCart}
-                    handleCloseCart={handleCloseCart}
-                    clearCart={clearCart}
-                    handleRemoveFromCart={handleRemoveFromCart}
-                    openGamePage={openGamePage}
-                />}/>
-                <Route path="*" element={<NotFound
-                    cartDisplayed={cartDisplayed}
-                    handleCloseCart={handleCloseCart}
-                    handleOpenCart={handleOpenCart}
-                    cartAmount={cartAmount}
-                    clearCart={clearCart}
-                    hoverState={hoverState}
-                    handleHome={handleHome}
-                    handleHover={handleHover}
-                    cart={cart}
-                    browsing={browsing}
-                    search={search}
-                    searching={searching}
-                    handleSearch={handleSearch}
-                    handleSearchSubmit={handleSearchSubmit}
-                    handleBrowse={handleBrowse}
-                    handleRemoveFromCart={handleRemoveFromCart}
-                    openGamePage={openGamePage}
-                />}/>
-            </Routes>
+    const handleAbout = () => {
+        console.log('handleAbout called');
+        setExtended(false);
+        setTextExtended(false);
+        setCartDisplayed(false);
+        setHoverState([...hoverState, hoverState[21].hovered = false]);
+        navigate('/nmcntt/about');
+    }
 
-        </AnimatePresence>
+    const handleGuide = () => {
+        console.log('handleGuide called');
+        setExtended(false);
+        setTextExtended(false);
+        setCartDisplayed(false);
+        setHoverState([...hoverState, hoverState[21].hovered = false]);
+        navigate('/nmcntt/guide');
+    }
+
+    return (
+        <div className="App">
+            <AnimatePresence exitBeforeEnter>
+                <Routes key="/nmcntt" location={location}>
+                    <Route path="/nmcntt" element={<Browse
+                        cart={cart}
+                        cartAmount={cartAmount}
+                        handleHover={handleHover}
+                        handleSelect={handleSelect}
+                        hoverState={hoverState}
+                        currentFilter={currentFilter}
+                        shownGames={shownGames}
+                        setShownGames={setShownGames}
+                        clearFilter={clearFilter}
+                        reviewDisplay={reviewDisplay}
+                        setReviewDisplay={setReviewDisplay}
+                        allGames={allGames}
+                        setAllGames={setAllGames}
+                        handleLike={handleLike}
+                        handleHoverGame={handleHoverGame}
+                        handleAddToCart={handleAddToCart}
+                        handleSelectGame={handleSelectGame}
+                        handleSearch={handleSearch}
+                        handleSearchSubmit={handleSearchSubmit}
+                        search={search}
+                        searching={searching}
+                        browsing={browsing}
+                        handleBrowse={handleBrowse}
+                        handleHome={handleHome}
+                        cartDisplayed={cartDisplayed}
+                        handleOpenCart={handleOpenCart}
+                        handleCloseCart={handleCloseCart}
+                        clearCart={clearCart}
+                        handleRemoveFromCart={handleRemoveFromCart}
+                        setHoverState={setHoverState}
+                        openGamePage={openGamePage}
+                    />} />
+                    <Route path="/nmcntt/games/:gameId" element={<GamePage
+                        cart={cart}
+                        cartAmount={cartAmount}
+                        handleHover={handleHover}
+                        hoverState={hoverState}
+                        handleLike={handleLike}
+                        handleAddToCart={handleAddToCart}
+                        handleSelectGame={handleSelectGame}
+                        selectedGame={selectedGame}
+                        setSelectedGame={setSelectedGame}
+                        handleSearch={handleSearch}
+                        handleSearchSubmit={handleSearchSubmit}
+                        search={search}
+                        searching={searching}
+                        browsing={browsing}
+                        handleBrowse={handleBrowse}
+                        handleHome={handleHome}
+                        setHoverState={setHoverState}
+                        allGames={allGames}
+                        extended={extended}
+                        setExtended={setExtended}
+                        textExtended={textExtended}
+                        setTextExtended={setTextExtended}
+                        cartDisplayed={cartDisplayed}
+                        handleOpenCart={handleOpenCart}
+                        handleCloseCart={handleCloseCart}
+                        clearCart={clearCart}
+                        handleRemoveFromCart={handleRemoveFromCart}
+                        openGamePage={openGamePage}
+                    />} />
+                    <Route path="*" element={<NotFound
+                        cartDisplayed={cartDisplayed}
+                        handleCloseCart={handleCloseCart}
+                        handleOpenCart={handleOpenCart}
+                        cartAmount={cartAmount}
+                        clearCart={clearCart}
+                        hoverState={hoverState}
+                        handleHome={handleHome}
+                        handleHover={handleHover}
+                        cart={cart}
+                        browsing={browsing}
+                        search={search}
+                        searching={searching}
+                        handleSearch={handleSearch}
+                        handleSearchSubmit={handleSearchSubmit}
+                        handleBrowse={handleBrowse}
+                        handleRemoveFromCart={handleRemoveFromCart}
+                        openGamePage={openGamePage}
+                    />} />
+                    <Route path="/nmcntt/about" element={<About />} />
+                    <Route path="/nmcntt/guide" element={<Guide />} />
+                    <Route path="/checkout" element={
+                        <Checkout 
+                            cart={cart}
+                            total={cart.reduce((sum, item) => sum + parseFloat(item.price), 0).toFixed(2)}
+                            handleHome={handleHome}
+                        />
+                    } />
+                </Routes>
+
+            </AnimatePresence>
+            <Footer
+                handleAbout={handleAbout}
+                handleGuide={handleGuide}
+                handleHome={handleHome}
+            />
+        </div>
     );
 }
 
