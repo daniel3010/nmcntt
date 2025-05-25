@@ -248,7 +248,10 @@
 
 .gameLink {
     padding-left: 14px;
-    font-family: "GT Bold";
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    color: #ccc;
+    transition: 0.3s all;
     cursor: pointer;
 }
 

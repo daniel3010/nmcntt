@@ -1,5 +1,5 @@
 import styles from './Cart.module.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ReactComponent as Right } from "../../assets/image/arrowRight.svg";
 import { ReactComponent as Cross } from "../../assets/image/cross.svg";
 import { motion } from "framer-motion";
@@ -23,6 +23,21 @@ const Cart = props => {
     const [total, setTotal] = useState(0);
     let newTotal = 0;
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (cartDisplayed) {
+            document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+            document.documentElement.style.overflow = 'unset';
+        }
+        
+        return () => {
+            document.body.style.overflow = 'unset';
+            document.documentElement.style.overflow = 'unset';
+        };
+    }, [cartDisplayed]);
 
     cart.forEach((item, i) => {
         let priceAsNumber = parseFloat(item.price);
