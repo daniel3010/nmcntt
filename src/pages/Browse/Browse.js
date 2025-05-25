@@ -8,7 +8,6 @@ import {ReactComponent as Columns} from "../../assets/image/columns.svg";
 import Filters from '../../Components/Filters/Filters';
 import Grid from '../../Components/Grid/Grid';
 import Cart from '../../Components/Cart/Cart';
-import Footer from '../../Components/Footer/Footer';
 
 const Browse = props => {
     const {
@@ -211,7 +210,6 @@ const Browse = props => {
                     </div>
                 </div>
             </AnimatedPage>
-            <Footer/>
         </section>
     );
 }

@@ -243,7 +243,12 @@
     color: white;
     padding-left: 14px;
     font-family: "GT Bold";
-    padding-bottom: 40px;
+    cursor: pointer;
+}
+
+.gameLink {
+    padding-left: 14px;
+    font-family: "GT Bold";
     cursor: pointer;
 }
 

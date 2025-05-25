@@ -5,19 +5,21 @@ import { ReactComponent as AppStore } from "../../assets/image/appstorebadge.svg
 
 const Footer = props => {
     const {
-        
+        handleAbout,
+        handleGuide,
+        handleHome
     } = props;
 
     return (
         <div className={styles.footer}>
-            <div className={styles.footerTop}>
+            <div className={styles.footerTop} onClick={handleHome} style={{ cursor: 'pointer' }}>
                 <Logo className={styles.logo} />
                 <h2>Game Store</h2>
             </div>
             <div className={styles.sections}>
               <div className={`${styles.section} ${styles.section1}`}>
                 <h3 className={styles.first}>Công ty</h3>
-                <h3>Giới thiệu</h3>
+                <h3 onClick={handleAbout} style={{ cursor: 'pointer' }}>Giới thiệu</h3>
                 <h3>Trung tâm báo chí</h3>
                 <h3>Cơ hội nghề nghiệp</h3>
               </div>
@@ -34,7 +36,7 @@ const Footer = props => {
               </div>
               <div className={`${styles.section} ${styles.section4}`}>
                 <h3 className={styles.first}>Hỗ trợ sản phẩm</h3>
-                <h3>Hỗ trợ</h3>
+                <h3 onClick={handleGuide} style={{ cursor: 'pointer' }}>Hướng dẫn</h3>
                 <h3>Báo lỗi</h3>
               </div>
             </div>

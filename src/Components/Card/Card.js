@@ -48,6 +48,22 @@ const Card = props => {
                 ${game.price}
             </div>
             <h2 className={styles.name}>{game.name}</h2>
+            {game.link && (
+                <a 
+                  href={game.link} 
+                  target="_blank" 
+                  className={styles.gameLink} 
+                  onClick={(e) => e.stopPropagation()}
+                >Trang chủ</a>
+            )}
+            {game.downloadLink && game.downloadLink !== '#' && (
+                <a 
+                  href={game.downloadLink} 
+                  target="_blank" 
+                  className={styles.gameLink} 
+                  onClick={(e) => e.stopPropagation()}
+                >Tải về</a>
+            )}
             <button 
               className={styles.like} 
               id={game.id} 
